@@ -37,10 +37,12 @@ return [
     // Do not include the id field above.
     // AzureUserField => LaravelUserField
     'user_map' => [
-        'id'                => 'id',
-        'name'              => 'displayName',
-        'email'             => 'mail', // use "userPrincipalName" instead if mail is not set
+        'displayName'       => 'name',
+        'userPrincipalName' => 'email', // use "userPrincipalName" instead if "mail" is not set
 
+        // Additional AD info
+        // Database fields should be set manually
+        /*
         'businessPhones'    => 'businessPhones',
         'displayName'       => 'displayName',
         'givenName'         => 'givenName',
@@ -51,5 +53,6 @@ return [
         'preferredLanguage' => 'preferredLanguage',
         'surname'           => 'surname',
         'userPrincipalName' => 'userPrincipalName',
+        */
     ]
 ];
