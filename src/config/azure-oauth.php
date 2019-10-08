@@ -17,7 +17,7 @@ return [
     'credentials' => [
         'client_id' => env('AZURE_AD_CLIENT_ID', ''),
         'client_secret' => env('AZURE_AD_CLIENT_SECRET', ''),
-        'redirect' => Request::root().'/login/microsoft/callback'
+        'redirect' => url('/login/microsoft/callback')
     ],
 
     // The route to redirect the user to upon login.
@@ -37,9 +37,19 @@ return [
     // Do not include the id field above.
     // AzureUserField => LaravelUserField
     'user_map' => [
-        'name' => 'name',
-        'email' => 'email',
-        'name' => 'name',
-        'name' => 'name',
+        'id'                => 'id',
+        'name'              => 'displayName',
+        'email'             => 'mail', // use "userPrincipalName" instead if mail is not set
+
+        'businessPhones'    => 'businessPhones',
+        'displayName'       => 'displayName',
+        'givenName'         => 'givenName',
+        'jobTitle'          => 'jobTitle',
+        'mail'              => 'mail',
+        'mobilePhone'       => 'mobilePhone',
+        'officeLocation'    => 'officeLocation',
+        'preferredLanguage' => 'preferredLanguage',
+        'surname'           => 'surname',
+        'userPrincipalName' => 'userPrincipalName',
     ]
 ];
